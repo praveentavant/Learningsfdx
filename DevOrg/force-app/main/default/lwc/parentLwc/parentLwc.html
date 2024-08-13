@@ -1,0 +1,25 @@
+<template>
+<lightning-card title="Parent Lwc" icon-name="standard:account">
+    <lightning-input class="slds-p-horizontal_xx-small"
+        label="Input field"
+        value={inputText}
+        type="number"
+        min="0"
+        max="10000"
+        onchange={onChangeHandler}>
+
+    </lightning-input>
+    <p class="slds-text-align_center" > count : {countValue}</p>
+    <c-child-lwc onsubstract={handleDecrement} 
+                    onadd={handleIncrement}
+                    onmultiply={handleMultiply}
+                    textvalue = {inputText}>
+                    
+    </c-child-lwc> 
+    <lightning-button class="slds-p-horizonal_small"
+        label="Add 100 from Parent"
+        value="100"
+        onclick={buttonClick}
+    ></lightning-button>
+</lightning-card>
+</template>

@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Conditional Redering">
+        <div class="slds-var-m-around_medium">
+            <lightning-button 
+            variant="brand-outline" 
+            label="Hide Data" 
+            title="Hide Data" 
+            onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
+            <lightning-button 
+            variant="brand-outline" 
+            label="Show Data" 
+            title="Show Data" 
+            onclick={handleClick1} class="slds-m-left_x-small"></lightning-button>
+            <template if:true={isvisible}>
+                <div>Hello Praveen you are doing quite well.</div>
+
+            </template>
+            <template if:false={isvisible}>
+                <div>Hey ! Sorry Please click on the "Show Data" button to see the Text</div>
+            </template>
+        </div>
+       
+    </lightning-card>
+    <lightning-card title="Type the correct kewords"></lightning-card>
+    <div class="slds-var-m-around_medium">
+        <lightning-input type="text" label="Hey Buddy! Please enter the correct keyword" onkeyup={ChangeHandler}>
+        </lightning-input>
+
+        <template if:true={getMethod}>
+            <div>Hey! wait wait.... you have typed it correctly Congrats</div>
+
+        </template>
+    </div>
+    
+</template>
