@@ -1,0 +1,53 @@
+<template>
+<lightning-card title="For:each loop template tag">
+<div class="slds-var-m-around_medium">
+    <template for:each={StateList} for:item="State"> <!--Template looping-->
+        <ul key={State} class="slds-list_dotted"> <!--key should be unique value-->
+            <li>{State}</li>
+            
+            </ul>
+    </template>
+    
+</div>
+</lightning-card>
+<lightning-card title="Iterator Loop">
+    <div class="slds-var-m-around_medium">
+    <template iterator:it={colleuge}>
+        <div key={it.value.id}>
+            <ul class="slds-has-dividers_around-space">
+                <template if:true={it.first}>
+                    <div class="slds-box slds-theme_shade">
+                        <strong>
+                            There are mentioned the Employee with their position and CTC
+                        </strong>
+                        
+                    </div>
+
+                </template>
+                <li class="slds-item">
+                    <strong>{it.value.Employee}</strong>
+                    {it.value.Position}
+                    {it.value.CTC}
+
+                </li>
+                <template if:true={it.last}>
+                    <div class="slds-box slds-theme_shade">
+                        <strong>
+                            Thanks for reading this
+                        </strong>
+                        
+                    </div>
+
+                </template>
+            </ul>
+
+        </div>
+        
+
+        
+    </template>
+    
+</div>
+</lightning-card>
+
+</template>
